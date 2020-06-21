@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 style="text-align: center">{{ search | title }}</h2>
+ <div class="row">
+   {% for posting in final_postings %}
+
+        <div class="col s4">
+            <div class="card">
+                <div class="card-image">
+                    <a href="{{ posting.1 }}"><img src="https://secure.img1-ag.wfcdn.com/im/18187842/resize-h800%5Ecompr-r85/4307/43074506/Hanging+Golden+Retriever+Puppy+Statue.jpg" alt=""></a>
+                </div>
+                <div class="card-content">
+                    <p>{{ posting.0 }}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{ posting.1 }}"> View listing: Price {{ posting.2 }}</a>
+                </div>
+            </div>
+        </div>
+   {% endfor %}
+ </div>
+{% endblock content %}
